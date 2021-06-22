@@ -49,5 +49,5 @@ def search_element(element, products_list):
                 results.sort()
                 return results
     results.sort()
-    return results.sort()
+    return results
 
