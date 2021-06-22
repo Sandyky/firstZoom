@@ -1,0 +1,61 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
+
+        <title>1stZOOM Assignment</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="robots" content="index, follow">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="language" content="English">
+        <meta name="revisit-after" content="10 days">
+        <title>1stZOOM Assignment</title>
+
+        <!-- <link rel="shortcut icon" type="image/png" href="{% static 'inkooplogo.png' %}"/> -->
+
+        <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+
+        <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .bg-darks {
+            background-color: #202223d1!important;
+        }
+        </style>
+
+        <!-- Specific Page CSS goes HERE  -->
+        {% block stylesheets %}{% endblock stylesheets %}
+
+    </head>
+
+    <body class="bg-white text-dark" >
+        <!--  Navbar  -->
+        {% include 'includes/navigation.html' %}
+        <!-- End of navbar -->
+
+        <!-- Start right Content here -->
+        <!-- <main role="main"> -->
+
+           {% block maincontents %} {% endblock maincontents%}
+
+        <!-- </main> -->
+         <!-- End Right content here -->
+        <!-- including jQuery  -->
+        {% include 'includes/scripts.html' %}
+
+        <!-- Specific Page JS goes HERE  -->
+        {% block javascripts %}{% endblock javascripts %}
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% block title %} Index {% endblock %}
+{% block maincontents %}
+<div class="container-fluid" style="margin-bottom: 20rem;">
+    <div class="row">
+        <div class="col-md-6" style="margin: 1rem auto 0  auto;">
+            <div class="card">
+                <div class="card-body">
+                    <form method="GET" action="{% url 'search' %}">
+                        <input class="form-control" type="text" name="search" placeholder="Search" style="margin-bottom: 1rem;">
+                        <div class="row">
+                            <div class="col-6">
+                                <input type="submit" class="btn btn-success" style="display: block;margin: 0 auto;">
+                            </div>
+                            <!-- <div class="col-6">
+                                <input type="reset" class="btn btn-danger" style="display: block;margin: 0 auto;">
+                            </div> -->
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% if mydict %}
+<main role="main">
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <table id = 'table'>
+                    <thead>
+                        <tr>
+                            <!-- <th>Searched Products</th> -->
+                        </tr>   
+                    </thead>
+                    <tbody>
+                        {% for result in mydict.results %}
+                        <tr>
+                            <td>{{result}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+{% endif %}
+
+{% endblock maincontents%}

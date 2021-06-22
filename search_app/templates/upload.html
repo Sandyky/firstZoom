@@ -1,0 +1,12 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% block title %} Index {% endblock %}
+{% block maincontents %}
+<div class="ui container">
+    <form action="" method="POST" class="ui form" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form }}
+      <button type="submit" class="ui button primary">Upload</button>
+    </form>
+  </div>
+{% endblock maincontents%}
